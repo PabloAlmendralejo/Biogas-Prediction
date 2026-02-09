@@ -11,16 +11,26 @@ Goal: Predict methane production from substrate measurements (pH, DQO, AGV, etc.
 
 ## Approach
 1. Load data from S3
-2. Preprocess: handle missing values, scale features
-3. Baseline: mean predictor
-4. ML models: GAM, Random Forest, kNN
-5. Evaluation: MAE, RMSE, R²
-6. Interpretation: feature importance, partial dependence plots
+2. Preprocess: handle missing values, scaling, polynomial features
+3. Train models:
+   - Baseline (mean predictor)
+   - GAM (Generalized Additive Model)
+   - Random Forest
+   - kNN
+   - Bayesian linear regression
+4. Evaluate models using MAE, RMSE, R², coverage (Bayesian)
+5. Interpret using PDP (GAM) and SHAP (RF)
 
 ## Results
-- GAM gave the best tradeoff between interpretability and accuracy
+- GAM provided best interpretability vs accuracy
 - Random Forest overfits due to small data
-- Simple baselines surprisingly competitive
+- Bayesian regression allows risk-aware predictions with predictive intervals
+- Mean predictor surprisingly competitive in some cases
+
+## Business Impact
+- Reduce experiment duration by predicting methane production
+- Save lab resources and cost
+- Prioritize experiments with high predicted methane yield
 
 ## How to Run
 ```bash
