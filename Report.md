@@ -44,8 +44,6 @@ Benchmarked **6 algorithms** using 80/20 train-test split with 5-fold cross-vali
 | Metric | Before | After | Improvement |
 |--------|--------|-------|-------------|
 | Time-to-prediction | 4-8 weeks | ~15 minutes | **~97%** reduction |
-| Cost per analysis | €2,500 | €85 | **~96%** reduction |
-| Monthly throughput | 12 clients | ~45 clients | **~3.5x** increase |
 | Prediction accuracy | N/A (baseline) | 71% R² | Suitable for screening |
 
 **Note:** Model performs best on mid-range methane yields; accuracy drops ~18% on extreme values. Physical validation still recommended for final client deliverables.
