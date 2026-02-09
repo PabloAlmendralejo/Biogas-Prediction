@@ -1,0 +1,11 @@
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+pygam
+boto3
+pymc3
+arviz
+shap
+scipy
