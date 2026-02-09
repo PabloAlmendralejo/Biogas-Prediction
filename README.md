@@ -1,14 +1,13 @@
 # Methane Production Prediction
 
 ## Problem
-Metanogenia S.L. performs methane production experiments that take weeks to complete.  
-Goal: Predict methane production from inexpensive measurements (pH, DQO, AGV, etc.) to save time and lab costs.
+To estimate the amount of methane that a substrate may produce a methane production experiment has to be performed, that take weeks to complete.  
+Goal: Predict methane production from substrate measurements (pH, DQO, AGV, etc.) to save time and lab costs.
 
 ## Data
-- Features: pH, DQO, DQO degradada, Alcalinidad, AGV, Solidos Totales, Solidos Volátiles, TRH  
+- Features: pH, DQO, degradated DQO , Alcalinity, AGV, Total Solids, Volatile Solids, TRH  
 - Target: CH4 production  
-- Data Source: AWS S3 (`s3://bucket/methane_data.csv`)  
-- Size: <100 samples (small dataset)
+- Data Source: AWS S3
 
 ## Approach
 1. Load data from S3
