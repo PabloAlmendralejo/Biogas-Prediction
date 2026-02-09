@@ -22,6 +22,8 @@ Once collected, all datasets are integrated into an **S3 bucket**, then processe
 
 S3 Bucket → s3_utils.py → Local Processing → Model Training → Evaluation → notebooks/ (EDA, Modeling, Interpretation)
 
+**Pipeline Overview:**
+
 | Component | Implementation |
 |-----------|---------------|
 | **Data Source** | S3 bucket via `load_csv_from_s3()` |
