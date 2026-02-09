@@ -54,21 +54,20 @@ Benchmarked **6 algorithms** using 80/20 train-test split with 5-fold cross-vali
 
 ## Repository Structure
 
-repo/
-├── src/
-│ ├── s3_utils.py # S3 data loading
-│ ├── preprocessing.py # Feature engineering
-│ ├── models.py # ML models
-│ ├── bayesian_models.py # Bayesian approaches
-│ ├── evaluation.py # Metrics & validation
-│ └── visualization.py # Plots & charts
-├── notebooks/
-│ ├── 01_EDA.ipynb
-│ ├── 02_Modeling.ipynb
-│ └── 03_Interpretation.ipynb
-├── requirements.txt
-└── .gitignore
-
+- **repo/**
+  - **src/**
+    - `s3_utils.py` – S3 data loading
+    - `preprocessing.py` – Feature engineering
+    - `models.py` – ML models
+    - `bayesian_models.py` – Bayesian approaches
+    - `evaluation.py` – Metrics & validation
+    - `visualization.py` – Plots & charts
+  - **notebooks/**
+    - `01_EDA.ipynb`
+    - `02_Modeling.ipynb`
+    - `03_Interpretation.ipynb`
+  - `requirements.txt`
+  - `.gitignore`
 ---
 
 ## Known Limitations & Risks
