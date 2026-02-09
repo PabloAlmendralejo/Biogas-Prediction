@@ -1,13 +1,24 @@
 # Methane Production Prediction Model for Biogas Plant Optimization
 
 ## Problem Statement
-**Business Context:** Consulting engagements require methane yield analysis that takes **weeks-to-months** per substrate through physical experiments, limiting throughput and client scalability.
+**Business Context:** The consulting company specializes in predicting the amount of methane that a client’s substrate may produce. This helps clients determine whether it is viable to process their waste on a large scale. For example, a pork processing plant may have leftover tissues and other organic waste but is unsure how to handle them. The plant can reach out to the consulting company to evaluate whether these byproducts can be converted into methane through a chemical process and if doing so is financially worthwhile.
+Currently, the company runs small-scale tests on samples of the substrate to measure potential methane production. This process can take several weeks, requires significant manual labor and monitoring, and costs up to €200 per sample.
 
-**Opportunity:** Build an ML-powered prediction pipeline to estimate methane output in **near real-time**, reducing client time-to-insight and increasing engagement capacity.
+**Opportunity:** The substrate can be characterized using variables such as pH, alkalinity, and CO₂ composition. Some of these factors are known to correlate with methane production. By leveraging these correlations, we can develop a machine learning–based prediction model to estimate the methane yield of a given substrate, significantly reducing time, labor, and cost.
 
 ---
 
-## Architecture & Data Pipeline
+## Data Sources & Data Pipeline
+
+The data powering the model comes from **two main sources**:
+
+1. **Client Databases:**  
+   Historical methane test results from multiple clients. These datasets required **standardization and cleaning** before being uploaded to a secure cloud storage (`S3`).
+
+2. **Open and Research Data:**  
+   Supplementary datasets from academic publications and publicly available sources, which helped increase model coverage and robustness.
+
+Once collected, all datasets are integrated into an **S3 bucket**, then processed and cleaned locally before training models.
 
 S3 Bucket → s3_utils.py → Local Processing → Model Training → Evaluation → notebooks/ (EDA, Modeling, Interpretation)
 
@@ -35,7 +46,7 @@ Benchmarked **6 algorithms** using 80/20 train-test split with 5-fold cross-vali
 | **SVR** | 12.1 | 9.0 | 0.58 |
 | **k-NN** | 13.4 | 10.2 | 0.52 |
 
-**Selected Model:** Random Forest — best accuracy; feature importance enables substrate characterization insights.
+**Selected Model:** Random Forest, best accuracy; feature importance enables substrate characterization insights.
 
 ---
 
