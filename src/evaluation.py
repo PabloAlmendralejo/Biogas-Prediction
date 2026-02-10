@@ -2,11 +2,25 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import numpy as np
 import scipy.stats as stats
 
-def evaluate(y_true, y_pred):
+def evaluate(
+    y_true: np.ndarray, 
+    y_pred: np.ndarray
+) -> Dict[str, float]:
+
     mae = mean_absolute_error(y_true, y_pred)
     rmse = np.sqrt(mean_squared_error(y_true, y_pred))
     r2 = r2_score(y_true, y_pred)
-    return {'MAE': mae, 'RMSE': rmse, 'R2': r2}
+    
+    # Avoid division by zero for MAPE
+    mask = y_true != 0
+    mape = np.mean(np.abs((y_true[mask] - y_pred[mask]) / y_true[mask])) * 100
+    
+    return {
+        'MAE': mae,
+        'RMSE': rmse,
+        'R2': r2,
+        'MAPE': mape
+    }
 
 def evaluate_bayesian(y_true, pred_mean, pred_std, coverage=0.95):
     """
