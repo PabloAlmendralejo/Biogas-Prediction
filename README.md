@@ -73,6 +73,7 @@ Benchmarked **6 algorithms** using 80/20 train-test split with 5-fold cross-vali
     - `bayesian_models.py` – Bayesian approaches
     - `evaluation.py` – Metrics & validation
     - `visualization.py` – Plots & charts
+    - `train.py` - Training the models
   - **notebooks/**
     - `01_EDA.ipynb`
     - `02_Modeling.ipynb`
